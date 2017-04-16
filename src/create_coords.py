@@ -39,8 +39,34 @@ class COORDS_FUNCTIONS:
             y += table_y
             return x, y
 
+        def c4():
+            x = coords.size_x / 2 + (coords.size_x / 2 * (math.cos(coords.t * coords.p1_t + coords.p1_off)) * coords.p1_a)
+            y = coords.size_y / 2 + (coords.size_y / 2 * (math.sin(coords.t * coords.p2_t + coords.p2_off) + 0.4 * (math.cos(coords.t * coords.p1_t + coords.p1_off)) ) * coords.p2_a)
+            table_x = coords.size_x/2 * coords.table_xa * math.cos(coords.t * coords.p3_t + coords.ptable_off)
+            table_y = coords.size_y/2 * coords.table_ya * math.sin(coords.t * coords.p3_t + coords.ptable_off)
+            x += table_x
+            y += table_y
+            return x, y
+ 
+        def c5():
+            x = coords.size_x / 2 + (coords.size_x / 2 * (math.cos(coords.t * coords.p1_t + coords.p1_off)) * 0.7 * (math.cos(2*coords.t * coords.p2_t + coords.p2_off))  * coords.p1_a)
+            y = coords.size_y / 2 + (coords.size_y / 2 * (math.sin(coords.t * coords.p2_t + coords.p2_off) * 0.7 * (math.sin(2*coords.t * coords.p1_t + coords.p1_off)) ) * coords.p2_a)
+            table_x = coords.size_x/2 * coords.table_xa * math.cos(coords.t * coords.p3_t + coords.ptable_off)
+            table_y = coords.size_y/2 * coords.table_ya * math.sin(coords.t * coords.p3_t + coords.ptable_off)
+            x += table_x
+            y += table_y
+            return x, y
+
+        def fade_color(c):
+            rgb1 = c
+            rgb2 = c
+            rgb3 = c
+            rgb4 = (0,0,0)
+            rgb = [math.pow((1 - coords.t/coords.timeout),3) * rgb1[i] + 3*math.pow(1 - coords.t/coords.timeout,2)*(coords.t/coords.timeout) * rgb2[i] + 3*math.pow(coords.t/coords.timeout,2)*(1-coords.t/coords.timeout) * rgb3[i] + math.pow(coords.t/coords.timeout,3)*rgb4[i] for i in range(3)]
+            return rgb
+
         def color0():
-            return (255,255,255)
+            return fade_color( (255,255,255) )
         
         def color1():
             return (255,0,0)
@@ -76,9 +102,10 @@ class COORDS_FUNCTIONS:
  
         def color9():
             rgb1 = (100+ math.sin(coords.t/10)*100,0,100+math.sin(coords.t/10+math.pi)*100)
-            rgb2 = (100,100, 100 + math.sin(coords.t/10)*100)
-            rgb3 = (30+math.sin(coords.t/10)*30,80+math.sin(coords.t/10 + math.pi)* 80, 0)
-            rgb = [math.pow((1 - coords.t/coords.timeout),3) * rgb1[i] + 3*math.pow(1 - coords.t/coords.timeout,2)*(coords.t/coords.timeout) * rgb2[i] + 3*math.pow(coords.t/coords.timeout,2)*(1-coords.t/coords.timeout) * rgb3[i] + math.pow(coords.t/coords.timeout,3)*rgb1[i] for i in range(3)]
+            rgb2 = (20,20 + math.sin(math.pi + coords.t/10)*20, 100 + math.sin(coords.t/10)*100)
+            rgb3 = (5+math.sin(coords.t/10)*5,5+math.sin(coords.t/10 + math.pi)* 5, 10)
+            rgb4 = (0,0,0)
+            rgb = [math.pow((1 - coords.t/coords.timeout),3) * rgb1[i] + 3*math.pow(1 - coords.t/coords.timeout,2)*(coords.t/coords.timeout) * rgb2[i] + 3*math.pow(coords.t/coords.timeout,2)*(1-coords.t/coords.timeout) * rgb3[i] + math.pow(coords.t/coords.timeout,3)*rgb4[i] for i in range(3)]
             return rgb
  
         color_d = {0: color0,
@@ -91,5 +118,5 @@ class COORDS_FUNCTIONS:
                    7: color7,
                    8: color8,
                    9: color9}
-        c_d = {0: c0, 1: c1, 2: c2, 3: c3}
+        c_d = {0: c0, 1: c1, 2: c2, 3: c3, 4: c4, 5: c5}
         return c_d, color_d
