@@ -46,7 +46,7 @@ def main():
     main_screen.fill((0, 0, 0))
     pygame.display.flip()
 
-    screen_area = pygame.Surface((8, 8), flags=pygame.SRCALPHA)
+    #screen_area = pygame.Surface( (8, 8), flags=pygame.SRCALPHA)
     brush = pygame.image.load(brush_path)
     brush.convert_alpha()
 
