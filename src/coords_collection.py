@@ -1,3 +1,5 @@
+# Author: Ingemar Markström
+
 import math
 import sys
 import pygame

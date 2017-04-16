@@ -1,3 +1,4 @@
+# Author: Ingemar Markström
 import sys
 sys.path.append('src/')
 import graph_simulation

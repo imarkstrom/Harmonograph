@@ -1,3 +1,4 @@
+# Author: Ingemar Markström
 import sys
 import pygame
 import coords_collection

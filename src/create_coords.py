@@ -1,3 +1,4 @@
+# Author: Ingemar Markström
 import math
 
 class COORDS_FUNCTIONS:
