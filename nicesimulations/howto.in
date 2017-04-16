@@ -10,4 +10,6 @@ excursion of table (0-1)
 friction of arm 1 (usually in the range 0.000001-0.00001)
 friction of arm 2 (usually in the range 0.000001-0.00001)
 friction of table (usually in the range 0.000001-0.00001)
-Version of coordinate generation function (defined in create_coords, 0..n)
+how long the simulation should run, usually 500-4000, but could be more depending on lengths
+horizontal creen size 
+vertical creen size 

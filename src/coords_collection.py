@@ -14,8 +14,8 @@ class COORDS:
         self.p2_off = float(ins[4])
         self.ptable_off = float(ins[5])
 
-        self.size_x = 1440
-        self.size_y = 900
+        self.size_x = int(ins[14])
+        self.size_y = int(ins[15])
         self.p1_t = 2*math.pi*math.sqrt(self.l1_a/9.8) # -2.0
         self.p2_t = 2*math.pi*math.sqrt(self.l2_a/9.8) #1.013
         self.p3_t = 2*math.pi*math.sqrt(self.ltable_a/9.8) #1.00301
