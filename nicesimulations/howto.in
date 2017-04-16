@@ -1,0 +1,13 @@
+drawing arm 1 length of pendulum
+drawing arm 2 length of pendulum
+table arm length of pendulum
+arm 1 offset (in rad)
+arm 2 offset (in rad)
+table 1 offset (in rad)
+excursion of arm 1 (0-1)
+excursion of arm 1 (0-1)
+excursion of table (0-1)
+friction of arm 1 (usually in the range 0.000001-0.00001)
+friction of arm 2 (usually in the range 0.000001-0.00001)
+friction of table (usually in the range 0.000001-0.00001)
+Version of coordinate generation function (defined in create_coords, 0..n)
