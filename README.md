@@ -9,6 +9,10 @@ While standing in the root directory, run
 
 `python3 main.py nicesimulations/s14.in pics/newPicture1.jpeg 3 1 0 src/brush.png`
 
+which should result in the following:
+
+![alt text](https://github.com/imarkstrom/Harmonograph/tree/master/pics/outPicture.jpeg "Result of simulation")
+
 If this works, good.
 `main.py` is the root program, then we have the input simulation settings file (please write your own ones), then the location where to save the outputed image.
 The first number is which of the coordination generators to use, where `0` is the simplest one.
