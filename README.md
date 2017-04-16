@@ -7,7 +7,7 @@ Begin by installing `numpy` and `pygame`.
 # How to run it
 While standing in the root directory, run
 
-`python3 main.py nicesimulations/s14.in pics/newPicture1.jpeg 3 1 0 src/brush.png`
+`python3 main.py nicesimulations/s14.in pics/outPicture.jpeg 3 1 0 src/brush.png`
 
 which should result in the following:
 
