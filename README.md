@@ -6,6 +6,7 @@ Begin by installing `numpy` and `pygame`.
 
 # How to run it
 While standing in the root directory, run
+
 `python3 main.py nicesimulations/s12.in pics/newPicture1.jpeg 1 0 src/yellowbrush.png`
 
 If this works, good.
