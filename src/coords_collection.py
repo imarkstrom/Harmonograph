@@ -6,7 +6,7 @@ import pygame
 from create_coords import COORDS_FUNCTIONS
 
 class COORDS:
-    def __init__(self, ins, version):
+    def __init__(self, ins, coords_version = 0, color_version = 0):
 
         self.l1_a = float(ins[0])
         self.l2_a = float(ins[1])
@@ -39,17 +39,18 @@ class COORDS:
         self.table_ya = self.table_ya_def
         self.t = 0
 
-        self.coords = COORDS_FUNCTIONS.fetch_functions(self, version)
+        self.coords, self.get_color = COORDS_FUNCTIONS.fetch_functions(self, coords_version, color_version)
+    
 
     def get_size(self):
         return (self.size_x, self.size_y)
 
-    def get_color(self):
-        rgb1 = (255,60,40)
-        rgb2 = (255,200,0)
-        rgb3 = (0,100,100)
-        rgb = [math.pow((1 - self.t/self.timeout),3) * rgb1[i] + 3*math.pow(1 - self.t/self.timeout,2)*(self.t/self.timeout) * rgb2[i] + 3*math.pow(self.t/self.timeout,2)*(1-self.t/self.timeout) * rgb3[i] + self.t*self.t/self.timeout/self.timeout*rgb1[i] for i in range(3)]
-        return rgb
+    # def get_color(self):
+    #     rgb1 = (255,60,40)
+    #     rgb2 = (255,200,0)
+    #     rgb3 = (0,100,100)
+    #     rgb = [math.pow((1 - self.t/self.timeout),3) * rgb1[i] + 3*math.pow(1 - self.t/self.timeout,2)*(self.t/self.timeout) * rgb2[i] + 3*math.pow(self.t/self.timeout,2)*(1-self.t/self.timeout) * rgb3[i] + self.t*self.t/self.timeout/self.timeout*rgb1[i] for i in range(3)]
+    #     return rgb
     
     def next_step(self,diff):
         self.x, self.y = self.coords()
