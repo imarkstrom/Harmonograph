@@ -11,7 +11,7 @@ While standing in the root directory, run
 
 which should result in the following:
 
-![alt text](https://github.com/imarkstrom/Harmonograph/tree/master/pics/outPicture.jpeg "Result of simulation")
+![alt text](https://raw.githubusercontent.com/imarkstrom/Harmonograph/master/pics/outPicture.jpeg "Result of simulation")
 
 If this works, good.
 `main.py` is the root program, then we have the input simulation settings file (please write your own ones), then the location where to save the outputed image.
