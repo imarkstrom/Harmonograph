@@ -4,9 +4,10 @@ import math
 import sys
 import pygame
 from create_coords import COORDS_FUNCTIONS
+from userdefined_coordinate_creators import USER_COORDS_FUNCTIONS
 
 class COORDS:
-    def __init__(self, ins, coords_version = 0, color_version = 0):
+    def __init__(self, ins, coords_version = 0, user_coord = False, color_version = 0, user_color = False):
 
         self.l1_a = float(ins[0])
         self.l2_a = float(ins[1])
@@ -39,8 +40,16 @@ class COORDS:
         self.table_ya = self.table_ya_def
         self.t = 0
 
-        self.coords, self.get_color = COORDS_FUNCTIONS.fetch_functions(self, coords_version, color_version)
-    
+        coords, get_color = COORDS_FUNCTIONS.fetch_functions(self)
+        u_coords, u_get_color = USER_COORDS_FUNCTIONS.fetch_functions(self)
+        if not user_coord:
+            self.coords = coords[coords_version]
+        else:
+            self.coords = u_coords[coords_version]
+        if not user_color:
+            self.get_color = get_color[color_version]
+        else:
+            self.get_color = u_get_color[color_version]
 
     def get_size(self):
         return (self.size_x, self.size_y)

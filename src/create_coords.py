@@ -2,7 +2,7 @@
 import math
 
 class COORDS_FUNCTIONS:
-    def fetch_functions(coords, coord_version, color_version):
+    def fetch_functions(coords):
         def c0():
             x = coords.size_x / 2 + (coords.size_x / 2 * ((math.cos(coords.t * coords.p1_t + coords.p1_off)) * coords.p1_a))
             y = coords.size_y / 2 + (coords.size_y / 2 * ((math.sin(coords.t * coords.p2_t + coords.p2_off)) * coords.p2_a))
@@ -62,4 +62,4 @@ class COORDS_FUNCTIONS:
  
         color_d = {0: color0, 1: color1, 2: color2}
         c_d = {0: c0, 1: c1, 2: c2, 3: c3}
-        return c_d[coord_version], color_d[color_version]
+        return c_d, color_d

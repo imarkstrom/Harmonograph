@@ -10,7 +10,11 @@ While standing in the root directory, run
 `python3 main.py nicesimulations/s14.in pics/newPicture1.jpeg 3 1 0 src/brush.png`
 
 If this works, good.
-`main.py` is the root program, then we have the input simulation settings file (please write your own ones), then the location where to save the outputed image. The first number is which of the coordination generators to use, where `0` is the simplest one. The second number is the color scheme used, where some exists already (like.. 0-2). The third number is how long part-lines should be, where a value of zero gives continuous lines. The last one is if you want to have a custom brush. Remember, its an 8x8 pixel sized png with transperency. The size of the generated image is for now set in the input file, which will be moved later.
+`main.py` is the root program, then we have the input simulation settings file (please write your own ones), then the location where to save the outputed image. The first number is which of the coordination generators to use, where `0` is the simplest one. The second number is the color scheme used, where some exists already (like.. 0-2). The third number is how long part-lines should be, where a value of zero gives continuous lines. Worth noting !If you add your custom coordinate or color to the user_defined file, you can access those by placin a "u" in front of the number!. The last one is if you want to have a custom brush. Remember, its an 8x8 pixel sized png with transperency. The size of the generated image is for now set in the input file, which will be moved later.
 
 The simulation runs to the end, and is exited via the terminal. Crude, but it works.
-Only one color scheme is available for now. Will be customizeable later on.
+Only one color scheme is available for now. Will be customizeable later on (it is now!).
+
+`python3 main.py nicesimulations/s14.in pics/newPicture1.jpeg 3 u0 0 src/brush.png`
+
+This would run a simulation with the third coordinate generator, with a user defined color scheme (number 0).

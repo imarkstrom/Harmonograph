@@ -16,6 +16,17 @@ def main():
     pygame.init()
     ins = open(sys.argv[1], "r").readlines()
     outs = sys.argv[2]
+    user_coords = False
+    if sys.argv[3][0] == "u":
+        user_coords = True
+        sys.argv[3] = sys.argv[3][1:]
+        
+    user_color = False
+    if sys.argv[4][0] == "u":
+        user_color = True
+        sys.argv[4] = sys.argv[4][1:]
+        print(sys.argv[4])
+
     version = int(sys.argv[3])
     color_version = int(sys.argv[4])
     strike_through = False
@@ -24,12 +35,12 @@ def main():
         if strike_through_num > 0:
             strike_through = True
 
-    brush_path = "src/yellowbrush.png"
+    brush_path = "src/brush.png"
     if len(sys.argv) > 6:
         brush_path = sys.argv[6] 
 
     
-    simulation = coords_collection.COORDS(ins,version,color_version)
+    simulation = coords_collection.COORDS(ins,version,user_coords,color_version,user_color)
 
     main_screen = pygame.display.set_mode(simulation.get_size())
     main_screen.fill((0, 0, 0))
